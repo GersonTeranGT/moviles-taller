@@ -45,7 +45,7 @@ export const PantallaLoginScreen = () => {
                 <View style={styles.registrarLogin}>
                     <Text style={styles.textoPregunta}>¿Ya tienes una cuenta? Inicia secion</Text>
                     <TouchableOpacity style={styles.buttonIniciarLogin}
-                        onPress={() => navigation.dispatch(CommonActions.navigate({ name: 'Inicio' }))}>
+                        onPress={() => navigation.goBack()}>
                         <Text style={styles.textosBotones}>INICIA SECCION</Text>
                     </TouchableOpacity>
                 </View>
