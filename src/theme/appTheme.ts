@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
         flex: 1
     },
     container: {
-        height:500,
+        height: 500,
         marginTop: 100,
         justifyContent: 'center',
         alignItems: 'center',
@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     },
     inputs: {
         height: 45,
-        width: '60%',
+        width:'80%',
         marginBottom: 25,
         borderWidth: 1,
         borderColor: '#007BFF',
@@ -25,6 +25,7 @@ export const styles = StyleSheet.create({
         fontSize: 16,
         backgroundColor: '#F8F9FA',
         color: '#333333',
+        alignSelf:'center'
 
     },
     texts: {
@@ -53,7 +54,7 @@ export const styles = StyleSheet.create({
     textosBotones: {
         color: 'white'
     },
-    containerLogin:{
+    containerLogin: {
         //marginTop: 10,
         justifyContent: 'center',
         alignItems: 'center',
@@ -62,21 +63,21 @@ export const styles = StyleSheet.create({
         borderTopRightRadius: 40,
         paddingVertical: 15,
     },
-    registrarLogin:{
+    registrarLogin: {
         marginTop: 40,
         justifyContent: 'center',
         alignItems: 'center',
     },
-    textoPregunta:{
-        fontSize:18,
+    textoPregunta: {
+        fontSize: 18,
         color: 'black',
-        fontWeight:'bold',
+        fontWeight: 'bold',
         textShadowColor: '#36557985', // Color de la sombra
-    textShadowOffset: { width: 0, height: 0 }, // Dirección
-    textShadowRadius: 9, // Difuminado
+        textShadowOffset: { width: 0, height: 0 }, // Dirección
+        textShadowRadius: 9, // Difuminado
 
     },
-    buttonIniciarLogin:{
+    buttonIniciarLogin: {
         backgroundColor: '#007BFF',
         paddingVertical: 12,
         paddingHorizontal: 25,
@@ -84,12 +85,22 @@ export const styles = StyleSheet.create({
         marginTop: 8,
         alignItems: 'center',
     },
-    titulo:{
-        marginBottom:20,
-        fontSize:20,
+    titulo: {
+        marginBottom: 20,
+        fontSize: 20,
         color: 'black',
-        fontWeight:'bold'
-
+        fontWeight: 'bold'
+    },
+    iconForm: {
+        position: 'absolute',
+        bottom: 36,
+        right: 70
+    },
+    containerForm:{
+        marginVertical:10,
+        marginHorizontal:10,
+        alignSelf:'stretch',
+        paddingHorizontal:25
     }
 
 })

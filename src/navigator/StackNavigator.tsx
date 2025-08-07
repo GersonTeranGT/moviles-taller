@@ -1,6 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack';
-import { PantallaInicioScreen } from '../screens/PantallaInicioScreen';
-import { PantallaLoginScreen } from '../screens/PantallaLoginScreen';
+import { LoginScreen } from '../screens/LoginScreen';
+import { RegisterScreen } from '../screens/RegisterScreen';
 
 const Stack = createStackNavigator();
 
@@ -13,8 +13,8 @@ export const StackNavigator = () => {
             }
         }}
         >
-            <Stack.Screen name="Inicio" options={{animation:'scale_from_center'}} component={PantallaInicioScreen} />
-            <Stack.Screen name="Login" options={{animation:'scale_from_center'}} component={PantallaLoginScreen} />
+            <Stack.Screen name="Inicio" options={{animation:'scale_from_center'}} component={LoginScreen} />
+            <Stack.Screen name="Login" options={{animation:'scale_from_center'}} component={RegisterScreen} />
         </Stack.Navigator>
     );
 }
