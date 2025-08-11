@@ -9,9 +9,10 @@ interface Props{
     changeForm: (property: string, value: string)=>void;
     property: string;
     isPassword?: boolean;
+    value?: string;
 }
 
-export const InputComponent = ({placeholder, keyboardType, changeForm, property, isPassword}: Props) => {
+export const InputComponent = ({placeholder, keyboardType, changeForm, property, isPassword, value}: Props) => {
     return (
         <TextInput
         placeholder={placeholder}
@@ -19,6 +20,7 @@ export const InputComponent = ({placeholder, keyboardType, changeForm, property,
         onChangeText={(value)=> changeForm(property, value)}
         secureTextEntry= {isPassword}
         style={styles.inputs}
+        value={value}
         />
 
     )

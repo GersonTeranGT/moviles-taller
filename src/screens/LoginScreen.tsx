@@ -25,7 +25,8 @@ interface User {
 //arreglo con la lista de usuarios
 const users: User[] = [
     { id: 1, name: 'Gerson Teran', phone: '0984886447', email: 'guapygt543@gmail.com', username: 'GuapyGT', password: '12345' },
-    { id: 2, name: 'Michael Arévalo', phone: '0963268653', email: 'mba.arevalosabando@gmai.com', username: 'Mick', password: '67890' }
+    { id: 2, name: 'Michael Arévalo', phone: '0963268653', email: 'mba.arevalosabando@gmail.com', username: 'Mick', password: '67890' },
+    { id: 3, name: 'Luis Salazar', phone: '0987981223', email: 'luisitoSala@gmail.com', username: 'Lusu', password: '24680' }
 ]
 export const LoginScreen = () => {
 
@@ -59,7 +60,7 @@ export const LoginScreen = () => {
             return;
         }
         if(!verifyUser()){
-            Alert.alert('Error', 'Usuario y/o conytraseña incorrectos \u274C');
+            Alert.alert('Error', 'Usuario y/o contraseña incorrectos \u274C');
             return;
         }
         console.log(formLogin);
@@ -70,7 +71,7 @@ export const LoginScreen = () => {
         <ImageBackground source={image} resizeMode="cover" style={styles.background} >
             <View style={styles.container}>
                 <Text style={estilos.textoBienve}>BIENVENIDO</Text>
-                <Text style={styles.titulo}>Inicie seción</Text>
+                <Text style={styles.titulo}>Inicie sesión</Text>
                 <View style={styles.containerForm}>
                     <Text style={styles.texts}>USUARIO</Text>
                 <InputComponent placeholder='Ingrese su usuario' keyboardType='default' changeForm={changeForm} property='username'/>
