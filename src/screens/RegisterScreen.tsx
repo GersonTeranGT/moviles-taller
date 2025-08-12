@@ -3,8 +3,14 @@ import { Alert, ImageBackground, StyleSheet, Text, TextInput, TouchableOpacity, 
 import { styles } from '../theme/appTheme'
 import { CommonActions, useNavigation } from '@react-navigation/native'
 import { InputComponent } from '../components/InputComponent'
+import { User } from '../navigator/StackNavigator'
 const image = require('../images/fondo_login.jpg')
 
+//interfaz para las propiedades
+interface Props{
+    users: User[];
+    addUser: (user: User)=>void;
+}
 //interface para el objeto del formulario
 interface FormRegister {
     name: string;
@@ -14,22 +20,8 @@ interface FormRegister {
     password: string;
 }
 
-//INTERFACE PATRA LOS OBJETOS DE MI ARREGLO USERS
-interface User {
-    id: number;
-    name: string;
-    phone: string;
-    email: string;
-    username: string;
-    password: string;
-}
 
-//ARREGLO CON LA LISTA DE USUARIOS
-// const users: User[] = [
-//     { id: 1, name: 'Gerson Teran', phone: '0984886447', email: 'guapygt543@gmail.com', username: 'GuapyGT', password: '123456' },
-// ]
-
-export const RegisterScreen = () => {
+export const RegisterScreen = ({users, addUser}: Props) => {
     //hook useState para navegacion
     const navigation = useNavigation()
 
@@ -47,8 +39,19 @@ export const RegisterScreen = () => {
         if (property === 'phone') {
             value = value.replace(/[^0-9]/g, '');
         }
-        console.log('Valor filtrado:', value);
         setFormRegister({ ...formRegister, [property]: value });
+    }
+
+    //funcion para verificar si el usuario existe
+    const verifyUsername =()=>{
+        const existUsename = users.find(user => user.username == formRegister.username);
+        return existUsename;
+    }
+
+    //funcion para generar los ids de los nuevos usuarios
+    const getIdUser =(): number=>{
+        const getId = users.length + 1;    //devuelve el numero de elementos en el arreglo
+        return getId;
     }
     
 
@@ -58,11 +61,32 @@ export const RegisterScreen = () => {
             Alert.alert('Error', `Por favor, llene todos los campos. \u{1F600}`);
             return;
         }
-        if (formRegister.phone.length < 10) {
+        if (formRegister.phone.length < 10 || formRegister.phone.length > 10) {
             Alert.alert('Error', 'El número de teléfono debe tener al menos 10 dígitos.');
             return;
         }
-        console.log(formRegister);
+
+        //validar que no exista el usuario
+        if(verifyUsername() != undefined){
+            Alert.alert('Error', 'El usuario que ingreso ya existe, porfavor ingrese otro usuario.')
+            return;
+        }
+
+        //crear el nuevo usuario
+        const newUser : User ={
+            id: getIdUser(),
+            name: formRegister.name,
+            phone: formRegister.phone,
+            email: formRegister.email,
+            username: formRegister.username,
+            password: formRegister.password
+        }
+
+        //agregar el nuevo usuario0 en el arreglo
+        addUser(newUser);
+        Alert.alert('Registro exitoso', 'El usuario registrado correctamente');
+        navigation.goBack();
+        //console.log(formRegister);
     }
 
 

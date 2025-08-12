@@ -4,6 +4,12 @@ import { styles } from '../theme/appTheme'
 import { CommonActions, useNavigation } from '@react-navigation/native'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { InputComponent } from '../components/InputComponent';
+import { User } from '../navigator/StackNavigator';
+
+//interfaz para las propiedades
+interface Props{
+    users: User[];
+}
 
 const image = require('../images/portatil-y-bolsas-de-la-compra-concepto-de-compras-en-linea.jpg')
 
@@ -12,23 +18,10 @@ interface FormLogin {
     password: string;
 }
 
-//insterface para los usuarios
-interface User {
-    id: number;
-    name: string;
-    phone: string;
-    email: string;
-    username: string;
-    password: string;
-}
 
-//arreglo con la lista de usuarios
-const users: User[] = [
-    { id: 1, name: 'Gerson Teran', phone: '0984886447', email: 'guapygt543@gmail.com', username: 'GuapyGT', password: '12345' },
-    { id: 2, name: 'Michael Arévalo', phone: '0963268653', email: 'mba.arevalosabando@gmail.com', username: 'Mick', password: '67890' },
-    { id: 3, name: 'Luis Salazar', phone: '0987981223', email: 'luisitoSala@gmail.com', username: 'Lusu', password: '24680' }
-]
-export const LoginScreen = () => {
+
+
+export const LoginScreen = ({users}: Props) => {
 
     const navigation = useNavigation()
 
@@ -63,7 +56,8 @@ export const LoginScreen = () => {
             Alert.alert('Error', 'Usuario y/o contraseña incorrectos \u274C');
             return;
         }
-        console.log(formLogin);
+        navigation.dispatch(CommonActions.navigate({name: 'Home'}));
+        //console.log(formLogin);
     }
 
     return (

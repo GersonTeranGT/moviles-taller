@@ -101,6 +101,23 @@ export const styles = StyleSheet.create({
         marginHorizontal:10,
         alignSelf:'stretch',
         paddingHorizontal:25
+    },
+    containerProducts:{
+        marginVertical:20,
+        marginHorizontal:10,
+    },
+    containerModal:{
+        flex:1,
+        backgroundColor: 'rgba(0,0,0,0.5)',
+        justifyContent:'center',
+        alignItems:'center',
+        marginVertical:20
+    },
+    modal:{
+        borderRadius:10,
+        backgroundColor:'white',
+        padding:20,
+        margin:15
     }
 
 })
