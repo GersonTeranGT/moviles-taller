@@ -114,8 +114,8 @@ export const styles = StyleSheet.create({
         marginVertical:20
     },
     modal:{
-        borderRadius:10,
-        backgroundColor:'white',
+        borderRadius:19,
+        backgroundColor:'#92ceffff',
         padding:20,
         margin:15
     },
@@ -123,21 +123,25 @@ export const styles = StyleSheet.create({
         flexDirection:'row',
         borderBottomColor: '#ccc',
         borderBottomWidth: 1,
-        padding: 10
+        padding: 10,
+        backgroundColor: '#007BFF',
+        borderRadius:10
     },
     iconModal:{
         flex:1,
         alignItems:'flex-end',
-        backgroundColor: 'red',
     },
     titleModal:{
         fontSize:18,
         fontWeight:'bold',
-        color: 'black'
+        color: 'black',
+        
     },
     imageModal:{
         width:150,
         height:150,
+        marginTop: 20,
+        borderRadius:18
     },
     containerImage:{
         alignItems:'center'

@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
-import { Products } from '../HomeScreen'
+import { Product } from '../HomeScreen'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { ModalProduct } from './ModalProduct';
 //interface para las propiedades
 interface Props {
-    item: Products;
+    item: Product;
+    updateStock: (id: number, quantity: number)=>void;
 }
 
-export const CardProduct = ({ item }: Props) => {
+export const CardProduct = ({ item , updateStock}: Props) => {
     //hok useState para manejar el estado del modal
     const [showModal, setShowModal] = useState<boolean>(false);
     return (
@@ -25,7 +26,7 @@ export const CardProduct = ({ item }: Props) => {
                     onPress={()=> setShowModal(!showModal)}/>
                 </View>
             </View>
-            <ModalProduct visible={showModal} item={item} setShowModal={()=> setShowModal(!showModal)}/>
+            <ModalProduct visible={showModal} item={item} setShowModal={()=> setShowModal(!showModal)} updateStock={updateStock}/>
         </View>
 
     )
@@ -40,7 +41,8 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         elevation: 7,
         margin: 8,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        flex:1
     },
     title: {
         fontSize: 15,
