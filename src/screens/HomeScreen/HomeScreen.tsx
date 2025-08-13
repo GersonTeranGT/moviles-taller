@@ -13,6 +13,14 @@ export interface Products {
     pathImage: string
 }
 
+//interface para el arreglo carrito
+interface Cart{
+    id: number;
+    name: string;
+    price: number;
+    quantity: number;
+    total: number;
+}
 export const HomeScreen = () => {
     //arreglo con la lista de productos
     const products: Products[] = [
@@ -35,7 +43,7 @@ export const HomeScreen = () => {
                 renderItem={({ item }) => <CardProduct item={item} />}
                 keyExtractor={item => item.id.toString()}
             //numColumns={2}
-            //columnWrapperStyle={{ justifyContent: 'space-between' }}
+            //columndWrapperStyle={{ justifyContent: 'space-between' }}
             />
         </View>
     )

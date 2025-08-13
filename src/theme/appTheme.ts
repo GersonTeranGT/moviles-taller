@@ -118,6 +118,72 @@ export const styles = StyleSheet.create({
         backgroundColor:'white',
         padding:20,
         margin:15
+    },
+    headerModal:{
+        flexDirection:'row',
+        borderBottomColor: '#ccc',
+        borderBottomWidth: 1,
+        padding: 10
+    },
+    iconModal:{
+        flex:1,
+        alignItems:'flex-end',
+        backgroundColor: 'red',
+    },
+    titleModal:{
+        fontSize:18,
+        fontWeight:'bold',
+        color: 'black'
+    },
+    imageModal:{
+        width:150,
+        height:150,
+    },
+    containerImage:{
+        alignItems:'center'
+    },
+    containerQuantity:{
+        flexDirection:'row',
+        justifyContent:'space-evenly',
+        alignItems:'center',
+        marginTop:20,
+    },
+    buttonQuantity:{
+        height:50,
+        width:50,
+        backgroundColor: '#65add6ff',
+        justifyContent:'center',
+        alignItems:'center',
+        margin:15,
+        borderRadius:25
+    },
+    buttonQuantityText:{
+        color: 'white',
+        fontSize:20,
+        fontWeight:'bold'
+    },
+    textQuantity:{
+        color: 'black',
+        fontSize:19,
+        fontWeight:'bold',
+    },
+    buttonAddCart:{
+        backgroundColor: '#ffffff',
+        marginTop:10,
+        paddingVertical: 10,
+        alignItems: 'center',
+        borderRadius:20
+    },
+    butonCartText:{
+        color:'black',
+        fontWeight:'bold',
+    },
+    textNoAvailable:{
+        color:'red',
+        fontSize:20,
+        alignSelf:'center',
+        marginTop:10,
+        fontWeight:'bold'
     }
 
 })
