@@ -34,15 +34,21 @@ export const StackNavigator = () => {
     }
     return (
         <Stack.Navigator
-        screenOptions={{
-            headerStyle:{
-                backgroundColor:'#008cffff',
-            }
-        }}
+            screenOptions={{
+                headerStyle: {
+                    backgroundColor: '#008cffff',
+                },
+                headerTintColor: '#fff',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                    fontSize: 20,
+                },
+                headerShadowVisible: true,
+            }}
         >
-            <Stack.Screen name="Inicio" options={{animation:'scale_from_center'}} children={()=> < LoginScreen users={listUsers}/>} />
-            <Stack.Screen name="Login" options={{ animation:'scale_from_center'}} children={()=> <RegisterScreen users={listUsers} addUser={addUser}/>} />
-            <Stack.Screen name="Home" options={{title:'Productos', animation:'scale_from_center'}} component={HomeScreen} />
+            <Stack.Screen name="Inicio" options={{ animation: 'scale_from_center' }} children={() => < LoginScreen users={listUsers} />} />
+            <Stack.Screen name="Login" options={{ animation: 'scale_from_center' }} children={() => <RegisterScreen users={listUsers} addUser={addUser} />} />
+            <Stack.Screen name="Home" options={{ title: 'Productos', animation: 'scale_from_center', }} component={HomeScreen} />
         </Stack.Navigator>
     );
 }

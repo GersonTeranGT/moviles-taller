@@ -8,10 +8,11 @@ interface Props {
     visible: boolean;
     item: Product;
     setShowModal: () => void;
-    updateStock: (id: number, quantity: number)=> void;
+    updateStock: (id: number, quantity: number) => void;
+    addProduct: (id: number, quantity: number) => boolean;
 }
 
-export const ModalProduct = ({ item, visible, setShowModal ,updateStock}: Props) => {
+export const ModalProduct = ({ item, visible, setShowModal, updateStock, addProduct }: Props) => {
 
     //hook useWindowDimention para tomare la dimencion de la pantalla
     const { width } = useWindowDimensions();
@@ -19,13 +20,17 @@ export const ModalProduct = ({ item, visible, setShowModal ,updateStock}: Props)
     const [quantity, setQuantity] = useState<number>(1);
 
     //funcion paraagregar al carrito
-    const handleAddCart =()=>{
-        //llamar funcion para actualizar el stock
-        updateStock(item.id, quantity);
-        //cerrar modal
-        setShowModal();
-        //reiniciar el contador
-        setQuantity(1);
+    const handleAddCart = () => {
+        const add = addProduct(item.id, quantity);
+        if (add) {
+            //llamar funcion para actualizar el stock
+            updateStock(item.id, quantity);
+            //cerrar modal
+            setShowModal();
+            //reiniciar el contador
+            setQuantity(1);
+        }
+
     }
 
     return (
@@ -37,7 +42,7 @@ export const ModalProduct = ({ item, visible, setShowModal ,updateStock}: Props)
                 }}>
                     <View style={styles.headerModal}>
                         <Text style={styles.titleModal}>{item.name} - ${item.price.toFixed(2)}</Text>
-                        <View style={styles.iconModal}>
+                        <View style={styles.containerIcon}>
                             <Icon name='cancel' size={17}
                                 onPress={setShowModal} />
                         </View>
@@ -71,8 +76,8 @@ export const ModalProduct = ({ item, visible, setShowModal ,updateStock}: Props)
                                 </View>
                                 <View>
                                     <TouchableOpacity style={styles.buttonAddCart}
-                                    onPress={handleAddCart}>
-                                        <Text style={styles.butonCartText}>Agregar al carrito</Text>
+                                        onPress={handleAddCart}>
+                                        <Text style={styles.buttonCartText}>Agregar al carrito</Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>

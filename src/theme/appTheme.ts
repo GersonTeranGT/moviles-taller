@@ -2,7 +2,8 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     background: {
-        flex: 1
+        flex: 1,
+        marginBottom: 30,
     },
     container: {
         height: 500,
@@ -16,7 +17,7 @@ export const styles = StyleSheet.create({
     },
     inputs: {
         height: 45,
-        width:'80%',
+        width: '80%',
         marginBottom: 25,
         borderWidth: 1,
         borderColor: '#007BFF',
@@ -25,8 +26,7 @@ export const styles = StyleSheet.create({
         fontSize: 16,
         backgroundColor: '#F8F9FA',
         color: '#333333',
-        alignSelf:'center'
-
+        alignSelf: 'center'
     },
     texts: {
         fontSize: 16,
@@ -34,7 +34,6 @@ export const styles = StyleSheet.create({
         marginBottom: 5,
         fontWeight: '600',
         textAlign: 'center'
-
     },
     vista: {
         backgroundColor: 'white'
@@ -72,10 +71,9 @@ export const styles = StyleSheet.create({
         fontSize: 18,
         color: 'black',
         fontWeight: 'bold',
-        textShadowColor: '#36557985', // Color de la sombra
-        textShadowOffset: { width: 0, height: 0 }, // Dirección
-        textShadowRadius: 9, // Difuminado
-
+        textShadowColor: '#36557985',
+        textShadowOffset: { width: 0, height: 0 },
+        textShadowRadius: 9,
     },
     buttonIniciarLogin: {
         backgroundColor: '#007BFF',
@@ -96,98 +94,126 @@ export const styles = StyleSheet.create({
         bottom: 36,
         right: 70
     },
-    containerForm:{
-        marginVertical:10,
-        marginHorizontal:10,
-        alignSelf:'stretch',
-        paddingHorizontal:25
+    containerForm: {
+        marginVertical: 10,
+        marginHorizontal: 10,
+        alignSelf: 'stretch',
+        paddingHorizontal: 25
     },
-    containerProducts:{
-        marginVertical:20,
-        marginHorizontal:10,
+    containerProducts: {
+        marginBottom: 119,
+        marginVertical: 20,
+        marginHorizontal: 10,
     },
-    containerModal:{
-        flex:1,
+    containerModal: {
+        flex: 1,
         backgroundColor: 'rgba(0,0,0,0.5)',
-        justifyContent:'center',
-        alignItems:'center',
-        marginVertical:20
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginVertical: 20
     },
-    modal:{
-        borderRadius:19,
-        backgroundColor:'#92ceffff',
-        padding:20,
-        margin:15
+    modal: {
+        borderRadius: 19,
+        backgroundColor: '#92ceffff',
+        padding: 20,
+        margin: 15
     },
-    headerModal:{
-        flexDirection:'row',
+    headerModal: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingHorizontal: 15,
+        paddingVertical: 12,
+        backgroundColor: '#007BFF',
         borderBottomColor: '#ccc',
         borderBottomWidth: 1,
-        padding: 10,
-        backgroundColor: '#007BFF',
-        borderRadius:10
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.2,
+        shadowRadius: 3,
+        elevation: 4
     },
-    iconModal:{
-        flex:1,
-        alignItems:'flex-end',
+    containerIcon: {
+        flex: 1,
+        alignItems: 'flex-end',
     },
-    titleModal:{
-        fontSize:18,
-        fontWeight:'bold',
-        color: 'black',
-        
-    },
-    imageModal:{
-        width:150,
-        height:150,
-        marginTop: 20,
-        borderRadius:18
-    },
-    containerImage:{
-        alignItems:'center'
-    },
-    containerQuantity:{
-        flexDirection:'row',
-        justifyContent:'space-evenly',
-        alignItems:'center',
-        marginTop:20,
-    },
-    buttonQuantity:{
-        height:50,
-        width:50,
-        backgroundColor: '#65add6ff',
-        justifyContent:'center',
-        alignItems:'center',
-        margin:15,
-        borderRadius:25
-    },
-    buttonQuantityText:{
+    titleModal: {
+        fontSize: 20,
+        fontWeight: 'bold',
         color: 'white',
-        fontSize:20,
-        fontWeight:'bold'
+        flex: 3,
+        textAlign: 'center'
     },
-    textQuantity:{
-        color: 'black',
-        fontSize:19,
-        fontWeight:'bold',
+    imageModal: {
+        width: 150,
+        height: 150,
+        marginTop: 20,
+        borderRadius: 18,
+        borderWidth: 2,
+        borderColor: '#007BFF'
     },
-    buttonAddCart:{
-        backgroundColor: '#ffffff',
-        marginTop:10,
-        paddingVertical: 10,
+    containerImage: {
         alignItems: 'center',
-        borderRadius:20
+        marginVertical: 10
     },
-    butonCartText:{
-        color:'black',
-        fontWeight:'bold',
+    containerQuantity: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        marginTop: 20,
+        paddingHorizontal: 20
     },
-    textNoAvailable:{
-        color:'red',
-        fontSize:20,
-        alignSelf:'center',
-        marginTop:10,
-        fontWeight:'bold'
+    buttonQuantity: {
+        height: 50,
+        width: 50,
+        backgroundColor: '#65add6',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginHorizontal: 10,
+        borderRadius: 25,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.1,
+        shadowRadius: 2,
+        elevation: 2
+    },
+    buttonQuantityText: {
+        color: 'white',
+        fontSize: 20,
+        fontWeight: 'bold'
+    },
+    textQuantity: {
+        color: 'black',
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginHorizontal: 10
+    },
+    buttonAddCart: {
+        backgroundColor: '#ffffff',
+        marginTop: 20,
+        paddingVertical: 12,
+        paddingHorizontal: 25,
+        alignItems: 'center',
+        borderRadius: 20,
+        alignSelf: 'center',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.15,
+        shadowRadius: 3,
+        elevation: 3
+    },
+    buttonCartText: {
+        color: '#007BFF',
+        fontWeight: 'bold',
+        fontSize: 16
+    },
+    textNoAvailable: {
+        color: 'red',
+        fontSize: 20,
+        alignSelf: 'center',
+        marginTop: 10,
+        fontWeight: 'bold'
     }
-
 })

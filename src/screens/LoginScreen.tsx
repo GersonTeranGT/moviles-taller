@@ -7,21 +7,18 @@ import { InputComponent } from '../components/InputComponent';
 import { User } from '../navigator/StackNavigator';
 
 //interfaz para las propiedades
-interface Props{
+interface Props {
     users: User[];
 }
 
-const image = require('../images/portatil-y-bolsas-de-la-compra-concepto-de-compras-en-linea.jpg')
+const image = require('../images/fondo-cocina.jpg')
 
 interface FormLogin {
     username: string;
     password: string;
 }
 
-
-
-
-export const LoginScreen = ({users}: Props) => {
+export const LoginScreen = ({ users }: Props) => {
 
     const navigation = useNavigation()
 
@@ -42,21 +39,21 @@ export const LoginScreen = ({users}: Props) => {
 
     //FUNCION PARA VALIDAR EL USUSARIO Y CONTRASEÑA
     const verifyUser = (): User | undefined => {
-        const existUser= users.find(user => user.username == formLogin.username && user.password == formLogin.password);
+        const existUser = users.find(user => user.username == formLogin.username && user.password == formLogin.password);
         return existUser;
     }
 
     //funcion para permitir iniciar sesion
-    const handleLogin =():void=>{
-        if (formLogin.username == '' || formLogin.password == ''){
+    const handleLogin = (): void => {
+        if (formLogin.username == '' || formLogin.password == '') {
             Alert.alert('Error', 'Ingrese su usuario y contraseña \u26A0')
             return;
         }
-        if(!verifyUser()){
+        if (!verifyUser()) {
             Alert.alert('Error', 'Usuario y/o contraseña incorrectos \u274C');
             return;
         }
-        navigation.dispatch(CommonActions.navigate({name: 'Home'}));
+        navigation.dispatch(CommonActions.navigate({ name: 'Home' }));
         //console.log(formLogin);
     }
 
@@ -68,17 +65,17 @@ export const LoginScreen = ({users}: Props) => {
                 <Text style={styles.titulo}>Inicie sesión</Text>
                 <View style={styles.containerForm}>
                     <Text style={styles.texts}>USUARIO</Text>
-                <InputComponent placeholder='Ingrese su usuario' keyboardType='default' changeForm={changeForm} property='username'/>
-                <Text style={styles.texts}>CONTRASEÑA</Text>
-                <InputComponent placeholder='Ingrese su contraseña' keyboardType='default' changeForm={changeForm} property='password' isPassword={hiddenPassword}/>
-                <Icon
-                    name={hiddenPassword ? 'visibility' : 'visibility-off'}
-                    size={20}
-                    style={styles.iconForm}
-                    onPress={()=> setHiddenPassword(!hiddenPassword)} />
+                    <InputComponent placeholder='Ingrese su usuario' keyboardType='default' changeForm={changeForm} property='username' />
+                    <Text style={styles.texts}>CONTRASEÑA</Text>
+                    <InputComponent placeholder='Ingrese su contraseña' keyboardType='default' changeForm={changeForm} property='password' isPassword={hiddenPassword} />
+                    <Icon
+                        name={hiddenPassword ? 'visibility' : 'visibility-off'}
+                        size={20}
+                        style={styles.iconForm}
+                        onPress={() => setHiddenPassword(!hiddenPassword)} />
                 </View>
-                
-                <TouchableOpacity style={styles.button} onPress={()=> handleLogin()}>
+
+                <TouchableOpacity style={styles.button} onPress={() => handleLogin()}>
                     <Text style={styles.textosBotones}>INGRESAR</Text>
                 </TouchableOpacity>
                 <View style={styles.registrar}>
