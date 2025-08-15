@@ -6,14 +6,18 @@ export const styles = StyleSheet.create({
         marginBottom: 30,
     },
     container: {
-        height: 500,
-        marginTop: 100,
+        height: 550,
+        width: 380,
+        marginTop: 160,
         justifyContent: 'center',
         alignItems: 'center',
+        alignSelf:'center',
         backgroundColor: 'rgba(252, 252, 252, 0.75)',
         borderBottomLeftRadius: 40,
         borderTopRightRadius: 40,
         paddingVertical: 30,
+        shadowColor:'#000',
+        elevation: 14
     },
     inputs: {
         height: 45,
@@ -54,6 +58,7 @@ export const styles = StyleSheet.create({
         color: 'white'
     },
     containerLogin: {
+        height:850,
         //marginTop: 10,
         justifyContent: 'center',
         alignItems: 'center',

@@ -46,8 +46,8 @@ export const StackNavigator = () => {
                 headerShadowVisible: true,
             }}
         >
-            <Stack.Screen name="Inicio" options={{ animation: 'scale_from_center' }} children={() => < LoginScreen users={listUsers} />} />
-            <Stack.Screen name="Login" options={{ animation: 'scale_from_center' }} children={() => <RegisterScreen users={listUsers} addUser={addUser} />} />
+            <Stack.Screen name="Inicio" options={{ headerShown:false, animation: 'scale_from_center' }} children={() => < LoginScreen users={listUsers} />} />
+            <Stack.Screen name="Login" options={{headerShown:false, animation: 'scale_from_center' }} children={() => <RegisterScreen users={listUsers} addUser={addUser} />} />
             <Stack.Screen name="Home" options={{ title: 'Productos', animation: 'scale_from_center', }} component={HomeScreen} />
         </Stack.Navigator>
     );
