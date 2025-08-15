@@ -86,7 +86,7 @@ export const HomeScreen = () => {
         return true;
         //console.log(cart);
     }
-
+    //funcion para resetear el arreglo del carrito
     const resetCart = () => {
         setCart([]);
     }
@@ -101,6 +101,7 @@ export const HomeScreen = () => {
                         <Icon name='shopping-cart'
                             size={27} color={'black'}
                             onPress={() => {
+                                //verificacion si el carrito tiene productos para habilitar el icono
                                 if (cart.length > 0) {
                                     setShowModal(!showModal)
                                 }

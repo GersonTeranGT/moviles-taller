@@ -21,6 +21,7 @@ export const ModalProduct = ({ item, visible, setShowModal, updateStock, addProd
 
     //funcion paraagregar al carrito
     const handleAddCart = () => {
+        //verificación para agregar producto al carrito
         const add = addProduct(item.id, quantity);
         if (add) {
             //llamar funcion para actualizar el stock
